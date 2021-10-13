@@ -6,8 +6,8 @@
   "author": "Giovanna Alves <giovanna.alves@gruponewway.com.br>",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node src/server.js",
-    "dev": "cross-env NODE_ENV=development node src/server.js"
+    "start": "NODE_ENV=production node src/server.js",
+    "dev": "NODE_ENV=development node src/server.js"
   },
   "engines": {
     "node": ">=0.16.10"
