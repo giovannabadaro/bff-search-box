@@ -5,8 +5,6 @@ const axios = require('axios')
 const getSearchedItemsController = async (request, response) => {
   const { q } = request.query
   const requestToApi = `${baseURL}/sites/${region}/search?q=${q}&limit=4`
-  console.log(requestToApi)
-
   if (!q) {
     return response.status(404).json({ message: 'Not Found!' })
   }
