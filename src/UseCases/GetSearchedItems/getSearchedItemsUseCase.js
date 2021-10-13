@@ -1,17 +1,23 @@
 const getSearcheItemsUseCase = async (data) => {
   const {
     results,
-    available_filters: [filteredCategories],
+    filters: [filteredCategories],
   } = data
+
   const author = {
     name: 'Giovanna',
     lastName: 'Badaró',
   }
-  const categories = filteredCategories.values.slice(0, 3)
+
+  const categories = filteredCategories?.values[0]?.path_from_root?.map(
+    (category) => category.name
+  )
+
   const tranformPicture = (item) =>
     item.pictures && item.pictures.length
       ? item.pictures[0].secure_url
       : item.thumbnail.replace(/-I\./, '-X.')
+
   const resultItems = results?.map((resultItem) => ({
     id: resultItem.id,
     title: resultItem.title,
