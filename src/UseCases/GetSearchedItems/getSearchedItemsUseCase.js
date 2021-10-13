@@ -1,7 +1,7 @@
 const getSearcheItemsUseCase = async (data) => {
   const {
     results,
-    available_filters: [filteredCategories],
+    filters: [filteredCategories],
   } = data
 
   const author = {
@@ -9,7 +9,9 @@ const getSearcheItemsUseCase = async (data) => {
     lastName: 'Badaró',
   }
 
-  const categories = filteredCategories.values.slice(0, 3)
+  const categories = filteredCategories?.values[0]?.path_from_root?.map(
+    (category) => category.name
+  )
 
   const tranformPicture = (item) =>
     item.pictures && item.pictures.length

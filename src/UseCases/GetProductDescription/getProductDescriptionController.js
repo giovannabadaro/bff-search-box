@@ -4,7 +4,7 @@ const axios = require('axios')
 
 const getProductListController = async (request, response) => {
   const { id } = request.params
-  console.log(id)
+
   const requestToApi = `${baseURL}/items/${id}`
 
   if (!id) {
