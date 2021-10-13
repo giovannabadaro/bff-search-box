@@ -8,6 +8,10 @@ const getSearcheItemsUseCase = async (data) => {
     lastName: 'Badaró',
   }
   const categories = filteredCategories.values.slice(0, 3)
+  const tranformPicture = (item) =>
+    item.pictures && item.pictures.length
+      ? item.pictures[0].secure_url
+      : item.thumbnail.replace(/-I\./, '-X.')
   const resultItems = results?.map((resultItem) => ({
     id: resultItem.id,
     title: resultItem.title,
@@ -16,7 +20,7 @@ const getSearcheItemsUseCase = async (data) => {
       amount: resultItem.price,
       decimals: 2,
     },
-    picture: resultItem.thumbnail,
+    picture: tranformPicture(resultItem),
     condition: resultItem.condition === 'new' ? 'Nuevo' : 'Usado',
     free_shipping: resultItem.shipping.free_shipping,
   }))
