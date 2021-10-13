@@ -1,0 +1,22 @@
+{
+  "name": "bff-search-box",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:giovannabadaro/bff-search-box.git",
+  "author": "Giovanna Alves <giovanna.alves@gruponewway.com.br>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "axios": "^0.23.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "prettier": "2.4.1"
+  }
+}
